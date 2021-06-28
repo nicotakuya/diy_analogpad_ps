@@ -1,6 +1,6 @@
 # diy_analogpad_ps
 DIY Analog Gamepad(Dual Shock2 version).
-PS Pad to MD convertor.
+Playstation GamePad to Megadrive convertor.
 
-回路図(schematics).
+schematics(Japanese).
 https://sites.google.com/site/yugenkaisyanico/diy-analogpad
