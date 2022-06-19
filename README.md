@@ -1,7 +1,7 @@
 # diy_analogpad_ps
 
 ## overview
-「XE-1AP」互換品を作る試みです。
+XE-1APの互換品を作る試みです。
 メガドライブ版「アフターバーナーII」で動作を確認しています。
 
 ![diy_analogpadps](https://user-images.githubusercontent.com/5597377/174466662-26c29c60-1b4c-4b4d-b915-08dad657b230.jpg)
@@ -27,3 +27,6 @@ Arduino IDEを使って、マイコンにプログラムを書き込みます。
 
 ## movie
 https://sites.google.com/site/yugenkaisyanico/diy-analogpad
+
+## 関連
+https://github.com/nicotakuya/diy_analogpad
