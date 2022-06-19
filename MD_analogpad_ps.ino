@@ -29,7 +29,7 @@
 // DATA   +0    +1    +2    +3    +4    +5    +6    +7    +8    +9    +10
 // D3-D0   
 // -----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+----
-//      |E*FG |ABCD |ch0H |ch1H |     |ch2H |ch0L |ch1L |     |ch2L | ?   |   
+//      |E*FG |ABCD |ch1H |ch0H |     |ch2H |ch1L |ch0L |     |ch2L | ?   |   
 //      +-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
 //      <16us><34us>
 //      <  50usec  >
@@ -45,8 +45,8 @@
 //    +-------+     +-----+     +-----+     +-----+     +-----+     +-----+    
 
 // stick/throttle
-#define REVERSE_CH0 0 //  ch.0 stick X( 0=normal / 1=reverse )
-#define REVERSE_CH1 0 //  ch.1 stick Y( 0=normal / 1=reverse ) 
+#define REVERSE_CH1 0 //  ch.0 stick X( 0=normal / 1=reverse )
+#define REVERSE_CH0 0 //  ch.1 stick Y( 0=normal / 1=reverse ) 
 #define REVERSE_CH2 0 //  ch.2 throttle( 0=normal / 1=reverse )
 
 #define MD_PORT PORTD     // data/LH/ACK用
@@ -312,16 +312,16 @@ void loop() {
     if(PSPAD_L2 ==0) temp &= ~(1<<0);  // D button
     sendbuf[1] = temp;
 
-#if REVERSE_CH0
-    ch0 = 255-PSPAD_LX;     //reverse
+#if REVERSE_CH1
+    ch1 = 255-PSPAD_LX;     //reverse
 #else
-    ch0 = PSPAD_LX;  //normal
+    ch1 = PSPAD_LX;  //normal
 #endif
 
-#if REVERSE_CH1
-    ch1 = 255-PSPAD_LY;     //reverse
+#if REVERSE_CH0
+    ch0 = 255-PSPAD_LY;     //reverse
 #else
-    ch1 = PSPAD_LY;  //normal
+    ch0 = PSPAD_LY;  //normal
 #endif
    
 #if REVERSE_CH2
@@ -330,12 +330,12 @@ void loop() {
     ch2 = PSPAD_RY;  //normal
 #endif
 
-    sendbuf[2] = ch0 >> 4;  // CH0 H
-    sendbuf[3] = ch1 >> 4;  // CH1 H
+    sendbuf[2] = ch1 >> 4;  // CH1 H
+    sendbuf[3] = ch0 >> 4;  // CH0 H
     sendbuf[4] = 0;
     sendbuf[5] = ch2 >> 4;  // CH2 H
-    sendbuf[6] = ch0 & 0x0f;  // CH0 L
-    sendbuf[7] = ch1 & 0x0f;  // CH1 L
+    sendbuf[6] = ch1 & 0x0f;  // CH1 L
+    sendbuf[7] = ch0 & 0x0f;  // CH0 L
     sendbuf[8] = 0;
     sendbuf[9] = ch2 & 0x0f;  // CH2 L
     sendbuf[10] = 0xf;  //未調査
