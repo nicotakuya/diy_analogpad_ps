@@ -40,3 +40,6 @@ https://sites.google.com/site/yugenkaisyanico/diy-analogpad
 
 ## 関連
 https://github.com/nicotakuya/diy_analogpad
+
+https://github.com/nicotakuya/multiway-pad-converter
+
