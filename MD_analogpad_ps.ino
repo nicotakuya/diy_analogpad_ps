@@ -45,8 +45,8 @@
 //    +-------+     +-----+     +-----+     +-----+     +-----+     +-----+    
 
 // stick/throttle
-#define REVERSE_CH1 0 //  ch.0 stick X( 0=normal / 1=reverse )
-#define REVERSE_CH0 0 //  ch.1 stick Y( 0=normal / 1=reverse ) 
+#define REVERSE_CH1 0 //  ch.1 stick X( 0=normal / 1=reverse )
+#define REVERSE_CH0 0 //  ch.0 stick Y( 0=normal / 1=reverse ) 
 #define REVERSE_CH2 0 //  ch.2 throttle( 0=normal / 1=reverse )
 
 #define MD_PORT PORTD     // data/LH/ACK用
